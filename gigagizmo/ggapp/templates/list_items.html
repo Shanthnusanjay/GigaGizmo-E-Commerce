@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} List items {% endblock %}
+
+{% block login %}
+
+    <!-- All Products -->
+
+    <div class="small-container">
+        {% for component in components %}
+        <div class="row">
+            <div class="col-4">
+                <a href="{% url 'item_details' component.id %}"><img src="{{ component.photo.url }}" ></a>
+                <h4>{{ component.name }}</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>{{ component.price }}</p>
+            </div>
+        {% empty %}
+      <h3 class="card-title">Pc are not available at this time!</h3>
+  {% endfor %}
+    </div>
+
+{% endblock %}
+ 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedStore | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="{% url 'index' %}"><img src="{% static 'images/logoo.png' %}" alt="logo" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'list_items' %}">Products</a></li>
+                    <li><a href="{% url 'user_login' %}">Account</a></li>
+                </ul>
+            </nav>
+            <a href="{% url 'display_cart_items' %}"><img src="{% static 'images/cart.png' %}" width="30px" height="30px"></a>
+            <img src="{% static 'images/menu.png' %}" class="menu-icon" onclick="menutoggle()">
+        </div>
+
+        <div class="container m-5">
+            {% block login %}
+            <div class="header">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-2">
+                            <h1>GeForce RTX 4080 </h1>
+                            <p>Supercharge your PC with the NVIDIA® GeForce RTX™ 4080 SUPER and RTX 4080. Bring your
+                                games and creative projects to life with accelerated ray tracing and AI-powered
+                                graphics. They're powered by the ultra-efficient NVIDIA Ada Lovelace architecture and
+                                16GB of super-fast G6X memory</p>
+                            <a href="http://127.0.0.1:8000/item-details/2" class="btn">Explore Now &#8594;</a>
+                        </div>
+                        <div class="col-2">
+                            <img src="{% static 'images/figure 1.png' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Categories -->
+
+            <div class="categories">
+                <div class="small-container">
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="static/images/pc1.jpg">
+                        </div>
+                        <div class="col-3">
+                            <img src="static/images/pc2.jpg">
+                        </div>
+                        <div class="col-3">
+                            <img src="static/images/pc3.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Offer -->
+            <div class="offer">
+                <div class="small-container">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="static/images/mouse.webp" class="offer-img">
+                        </div>
+                        <div class="col-2">
+                            <p>Exclusively Available on GigaGizmo</p>
+                            <h1>Logitech G502 X Lightspeed Plus </h1>
+                            <small>G502 X PLUS is the latest addition to legendary G502 lineage. Redesigned and
+                                reinvented with the most innovative gaming technologies, including our first-ever
+                                LIGHTFORCE hybrid switches, LIGHTSPEED pro-grade wireless, LIGHTSYNC RGB and HERO 25K
+                                Optical Sensor. G502 X PLUS is also POWERPLAY compatible—so it never runs out of
+                                power.<br></small>
+                            <a href="http://127.0.0.1:8000/item-details/6" class="btn">Buy Now &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="testimonial">
+                <div class="small-container">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="fa fa-quote-left"></i>
+                            <p>I recently purchased several PC parts from GigaGizmo, and I couldn't be happier with my
+                                experience. The website was easy to navigate, and they had a wide selection of
+                                components to choose from. I was able to find everything I needed to build my dream
+                                gaming rig at competitive prices. The ordering process was smooth, and my items arrived
+                                quickly and in perfect condition. I highly recommend GigaGizmo to anyone looking to
+                                upgrade or build their own PC!</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <img src="static/images/user-1.png">
+                            <h3>Sean Parker</h3>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-quote-left"></i>
+                            <p>Overall, I had a positive experience buying PC parts from GigaGizmo. Their website is
+                                user-friendly, and I appreciated the detailed product descriptions and specifications
+                                provided for each item. The prices were reasonable, and I was able to find everything I
+                                needed for my build. The only reason I'm not giving them a perfect score is that one of
+                                the items I ordered was out of stock, and I wasn't notified until after I placed my
+                                order. However, their customer service team was quick to resolve the issue and offered
+                                me a suitable alternative. I would definitely shop at GigaGizmo again in the future.</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <img src="static/images/user-2.png">
+                            <h3>Mike Smith</h3>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-quote-left"></i>
+                            <p>My experience with GigaGizmo was somewhat mixed. While they have a good selection of PC
+                                parts and accessories, I found their prices to be slightly higher compared to other
+                                online retailers. However, I decided to make my purchase with them because of their
+                                reputation for quality and reliability. The ordering process was straightforward, but I
+                                was disappointed with the shipping time. It took longer than expected for my items to
+                                arrive, and I had to contact customer service to inquire about the delay. Despite these
+                                issues, the products I received were in good condition, and they worked as expected. In
+                                the future, I'll likely explore other options before making another purchase from
+                                GigaGizmo.</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <img src="static/images/user-3.png">
+                            <h3>Mabel Joe</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- javascript -->
+
+            <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+
+
+            </script>
+
+            {% endblock %}
+            {% block list_addresses %}
+            {% endblock %}
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
